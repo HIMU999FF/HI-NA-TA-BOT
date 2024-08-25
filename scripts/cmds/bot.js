@@ -25,9 +25,9 @@ module.exports = {
       ) {
         // List of GIF URLs
         const gifUrls = [
-          "https://i.imgur.com/VHJyoSq.gif", // You can replace these with any GIF URLs
-          "https://i.imgur.com/WmOnDUM.gif",
-          "https://i.imgur.com/ABgnF4m.gif"
+          "", // You can replace these with any GIF URLs
+          "",
+          ""
         ];
 
         // Randomly select a GIF URL
