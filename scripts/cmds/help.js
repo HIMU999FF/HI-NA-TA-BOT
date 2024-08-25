@@ -3,13 +3,13 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "";
+const doNotDelete = "[ 🤡| Cloud ]";
 
 module.exports = {
   config: {
     name: "help",
     version: "1.17",
-    author: "NTKhang", // original author Kshitiz
+    author: "Redwan", //
     countDown: 0,
     role: 0,
     shortDescription: {
@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `╔══════════════╗\n 𝐇𝐈 𝐍𝐀 𝐓𝐀 ❤️🪽 \n╚══════════════╝`;
+      msg += `╔══════════════╗\n  𝐇𝐈 𝐍𝐀 𝐓𝐀 ❤️🪽 ✿︎\n╚══════════════╝`;
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -53,11 +53,18 @@ module.exports = {
       });
 
       const totalCommands = commands.size;
-      msg += `\n𝗖𝗨𝗥𝗥𝗘𝗡𝗧𝗟𝗬, 𝗧𝗛𝗜𝗦 𝗕𝗢𝗧 𝗛𝗔𝗩𝗘 ${totalCommands} 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗧𝗛𝗔𝗧 𝗖𝗔𝗡 𝗕𝗘 𝗨𝗦𝗘𝗗. 𝗦𝗢𝗢𝗡 𝗠𝗢𝗥𝗘 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗪𝗜𝗟𝗟 𝗕𝗘 𝗔𝗗𝗗𝗘𝗗\n`;
-      msg += `𝗧𝗛𝗔𝗡𝗞'𝗦 𝗙𝗢𝗥 𝗨𝗦𝗘𝗜𝗡𝗚 𝗛𝗜𝗠𝗨'𝗦 𝗕𝗢𝗧\n`;
+      msg += `\n𝘾𝙪𝙧𝙧𝙚𝙣𝙩𝙡𝙮, 𝙏𝙝𝙞𝙨 𝙗𝙤𝙩 𝙝𝙖𝙫𝙚  ${totalCommands} 𝙘𝙤𝙢𝙢𝙖𝙣𝙙𝙨 𝙩𝙝𝙖𝙩 𝙘𝙖𝙣 𝙗𝙚 𝙪𝙨𝙚𝙙. 𝙎𝙤𝙤𝙣 𝙢𝙤𝙧𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙𝙨 𝙬𝙞𝙡𝙡 𝙗𝙚 𝙖𝙙𝙙𝙚𝙙\n`;
+      msg += `𝙏𝙮𝙥𝙚 ${prefix} 𝙝𝙚𝙡𝙥 𝗰𝙤𝙢𝙢𝙖𝙣𝙙 𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`;
+      msg += `𝙁𝙊𝙍 𝘼𝙉𝙔 𝙊𝙏𝙃𝙀𝙍 𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙏𝙄𝙊𝙉 𝘾𝙊𝙉𝙏𝙍𝘼𝘾𝙏 𝙊𝙒𝙉𝙀𝙍 𝘽𝙔 𝙏𝙔𝙋𝙄𝙉𝙂 /𝘾𝘼𝙇𝙇𝘼𝘿 𝙃𝙀𝙇𝙋`;
 
       const helpListImages = [
-        "https://cdn.fbsbx.com/v/t59.2708-21/455000713_2830476190440786_7583617146890715507_n.gif?_nc_cat=103&ccb=1-7&_nc_sid=cf94fc&_nc_eui2=AeGsIQTwsXMRIOsIvzcefAt60klg4mutWsnSSWDia61ayQr21URdQCShhw7Q46Zs0FL8YBmTI0vRAvNLqWrot-RN&_nc_ohc=WjArEp2r9c4Q7kNvgG4g38B&_nc_ht=cdn.fbsbx.com&oh=03_Q7cD1QHxSBBkL4snnbRswJ_Njf43cIAxopG55hxrrwbVvK-J9A&oe=66C6D3EB",
+        "https://imgur.com/a/9u1hwB4",
+        "https://imgur.com/a/9u1hwB4",
+        "https://imgur.com/a/9u1hwB4",
+        "https://imgur.com/a/9u1hwB4",
+        "https://imgur.com/a/9u1hwB4",
+        "https://imgur.com/a/9u1hwB4",
+        "https://imgur.com/a/9u1hwB4",
       ];
 
       const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];
