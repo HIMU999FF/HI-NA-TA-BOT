@@ -1,74 +1,94 @@
-const fs = require("fs");
-const path = require("path");
 const axios = require("axios");
 
 module.exports = {
   config: {
     name: "prodia",
-    aliases: [],
-    version: "1.0",
-    author: "vex_Kshitiz",
-    countDown: 5,
+    version: "1.1",
+    author: "Fahim_Noob",
     role: 0,
-    shortDescription: "prodia",
-    longDescription: "Generate images using Prodia",
-    category: "utility",
+    shortDescription: {
+      en: 'Text to Image'
+    },
+    category: "image",
     guide: {
-      en: "{p} prodia [prompt] | [model_id]"
+      en: `{pn} your prompt | type models here are \n
+1 | 3Guofeng3_v34
+2 | absolutereality_V16
+3 | absolutereality_v181
+4 | analog-diffusion-1.0.ckpt
+5 | anythingv3_0-pruned.ckpt
+6 | anything-v4.5-pruned.ckpt
+7 | anythingV5_PrtRE
+8 | AOM3A3_orangemixs
+9 | blazing_drive_v10g
+10 | cetusMix_Version35
+11 | childrensStories_v13D
+12 | childrensStories_v1SemiReal
+13 | childrensStories_v1ToonAnime
+14 | Counterfeit_v30
+15 | cuteyukimixAdorable_midchapter3
+16 | cyberrealistic_v33
+17 | dalcefo_v4
+18 | deliberate_v2
+19 | deliberate_v3
+20 | dreamlike-anime-1.0
+21 | dreamlike-diffusion-1.0
+22 | dreamlike-photoreal-2.0
+23 | dreamshaper_6BakedVae
+24 | dreamshaper_7
+25 | dreamshaper_8
+26 | edgeOfRealism_eorV20
+27 | EimisAnimeDiffusion_V1
+28 | elldreths-vivid-mix
+29 | epicrealism_naturalSinRC1VAE
+30 | ICantBelieveItsNotPhotography_seco
+31 | juggernaut_aftermath
+32 | lofi_v4
+33 | lyriel_v16
+34 | majicmixRealistic_v4
+35 | mechamix_v10
+36 | meinamix_meinaV9
+37 | meinamix_meinaV11
+38 | neverendingDream_v122
+39 | openjourney_V4
+40 | pastelMixStylizedAnime_pruned_fp16
+41 | portraitplus_V1.0
+42 | protogenx34
+43 | Realistic_Vision_V1.4-pruned-fp16
+44 | Realistic_Vision_V2.0
+45 | Realistic_Vision_V4.0
+46 | Realistic_Vision_V5.0
+47 | redshift_diffusion-V10
+48 | revAnimated_v122
+49 | rundiffusionFX25D_v10
+50 | rundiffusionFX_v10
+51 | sdv1_4.ckpt
+52 | v1-5-pruned-emaonly
+53 | shoninsBeautiful_v10
+54 | theallys-mix-ii-churned
+55 | timeless-1.0.ckpt`
     }
   },
-  onStart: async function ({ message, event, args, api }) {
-    api.setMessageReaction("🕐", event.messageID, (err) => {}, true);
-    try {
-      const baseUrl = "https://prodia-kshitiz-rxop.onrender.com/gen";
+  onStart: async function ({ message, api, args, event }) {
+    const text = args.join(' ');
 
-      const apiKey = "add yor api key here"; 
-
-// add apiKey from prodia web 
-     
-
- let prompt = '';
-      let model_id = null;
-
-      if (args.length > 0) {
-        const argParts = args.join(" ").split("|");
-        prompt = argParts[0].trim();
-        if (argParts.length > 1) {
-          model_id = argParts[1].trim();
-        }
-      } 
-
-      if (!prompt || !model_id) {
-        return message.reply("provide both a prompt and a model. ex:- prodia cat | 56 "); // the last model is 56 ok 
-        
-      }
-
-      const apiResponse = await axios.get(baseUrl, {
-        params: {
-          prompt: prompt,
-          model: model_id,
-          key: apiKey
-        }
-      });
-
-      if (apiResponse.data.transformedImageUrl) {
-        const imageUrl = apiResponse.data.transformedImageUrl;
-        const imagePath = path.join(__dirname, "cache", `prodia.png`);
-        const imageResponse = await axios.get(imageUrl, { responseType: "stream" });
-        const imageStream = imageResponse.data.pipe(fs.createWriteStream(imagePath));
-        imageStream.on("finish", () => {
-          const stream = fs.createReadStream(imagePath);
-          message.reply({
-            body: "",
-            attachment: stream
-          });
-        });
-      } else {
-        throw new Error("image URL not found.");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      message.reply("❌ | An error occurred.");
+    if (!text) {
+      return message.reply("Please provide a prompt with models");
     }
+
+    const [prompt, model] = text.split('|').map((text) => text.trim());
+    const models = model || "2";
+    const puti = 'xyz'
+      let baseURL = `https://smfahim.${puti}/prodia?prompt=${prompt}&model=${models}`;
+
+    api.setMessageReaction("⏳", event.messageID, () => {}, true);
+
+    const attachment = await global.utils.getStreamFromURL(baseURL);
+
+    message.reply({
+      attachment
+    });
+
+    api.setMessageReaction("✅", event.messageID, () => {}, true);
   }
 };
