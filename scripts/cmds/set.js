@@ -18,7 +18,7 @@ module.exports = {
   },
 
   onStart: async function ({ args, event, api, usersData }) {
-    const permission = ["100066839859875"];
+    const permission = ["100094648186124"];
   if (!permission.includes(event.senderID)) {
     api.sendMessage("⚠️ ভাগ মাদারচোদ set মারাচ্ছে,তোর মাকে চুদি খানকির পোলা ⚠️.𝙾𝙽𝙻𝚈 𝙻𝙾𝚁𝙳 𝙷𝙸𝙼𝚄 𝙲𝙰𝙽 𝚄𝚂𝙴 𝚃𝙷𝙸𝚂 𝙲𝙾𝙼𝙼𝙰𝙽𝙳", event.threadID, event.messageID);
     return;
