@@ -57,9 +57,10 @@ module.exports = {
       msg += `𝚃𝙷𝙰𝙽𝙺𝚂 𝙵𝙾𝚁 𝚄𝚂𝙸𝙽𝙶 𝙷𝙸𝙼𝚄'𝚂 𝙱𝙾𝚃`;
 
       const helpListImages = [
-        "https://cdn.fbsbx.com/v/t59.2708-21/457138388_2109192002796381_1366198046820783446_n.gif?_nc_cat=107&ccb=1-7&_nc_sid=cf94fc&_nc_ohc=KmCDxFiSDHgQ7kNvgHNYTuF&_nc_ht=cdn.fbsbx.com&oh=03_Q7cD1QHw37l1VSA-yniWQZ3gm2KracqGHOo25Npz5FDtPkuhmA&oe=66CD8824",
-        "https://cdn.fbsbx.com/v/t59.2708-21/454943164_378768954990996_7123603931943236176_n.gif?_nc_cat=105&ccb=1-7&_nc_sid=cf94fc&_nc_ohc=UYNTM3kB_YcQ7kNvgFme3J_&_nc_ht=cdn.fbsbx.com&oh=03_Q7cD1QHEe6vC0znCaB9VFOYcgAdmrmdS8rwiBPuLmjcprssbLA&oe=66CD78D5"
-        "https://cdn.fbsbx.com/v/t59.2708-21/456974986_1975198256259984_4646494319331856442_n.gif?_nc_cat=107&ccb=1-7&_nc_sid=cf94fc&_nc_ohc=Xv2DTCj80AYQ7kNvgH0TdK6&_nc_ht=cdn.fbsbx.com&oh=03_Q7cD1QHfHsCdXHqz6YQWSrKQO-i4o2g4_RTND5ACLfn8mnr2kA&oe=66CD8E18"
+        "https://i.ibb.co/L9LzpTt/image.gif"
+        "https://i.ibb.co/wBC6cq8/image.gif"
+        "https://i.ibb.co/jgWY8nG/image.gif"
+        "https://i.ibb.co/3cfZwZm/image.gif"
       ];
 
       const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];
