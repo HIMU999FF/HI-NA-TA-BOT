@@ -9,7 +9,7 @@ module.exports = {
   config: {
     name: "help",
     version: "1.17",
-    author: "Redwan", //
+    author: "Redwan bokachoda", //
     countDown: 0,
     role: 0,
     shortDescription: {
@@ -87,21 +87,21 @@ module.exports = {
         const guideBody = configCommand.guide?.en || "No guide available.";
         const usage = guideBody.replace(/{p}/g, prefix).replace(/{n}/g, configCommand.name);
 
-        const response = `╭── NAME ────⭓
+        const response = `╭── 𝙽𝙰𝙼𝙴 ────⭓
   │ ${configCommand.name}
-  ├── INFO
-  │ Description: ${longDescription}
-  │ Other names: ${configCommand.aliases ? configCommand.aliases.join(", ") : "Do not have"}
-  │ Other names in your group: Do not have
-  │ Version: ${configCommand.version || "1.0"}
-  │ Role: ${roleText}
-  │ Time per command: ${configCommand.countDown || 1}s
-  │ Author: ${author}
-  ├── Usage
+  ├── 𝙸𝙽𝙵𝙾
+  │ 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽: ${longDescription}
+  │ 𝙾𝚃𝙷𝙴𝚁 𝙽𝙰𝙼𝙴𝚂: ${configCommand.aliases ? configCommand.aliases.join(", ") : "Do not have"}
+  │ 𝙾𝚃𝙷𝙴𝚁 𝙽𝙰𝙼𝙴𝚂 𝙸𝙽 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿: Do not have
+  │ 𝚅𝙴𝚁𝚂𝙸𝙾𝙽: ${configCommand.version || "1.0"}
+  │ 𝚁𝙾𝙻𝙴: ${roleText}
+  │ 𝚃𝙸𝙼𝙴 𝙿𝙴𝚁 𝙲𝙾𝙼𝙼𝙰𝙽𝙳: ${configCommand.countDown || 1}s
+  │ 𝙰𝚄𝚃𝙷𝙾𝚁: ${author}
+  ├── 𝚄𝚂𝙰𝙶𝙴
   │ ${usage}
-  ├── Notes
-  │ The content inside <XXXXX> can be changed
-  │ The content inside [a|b|c] is a or b or c
+  ├── 𝙽𝙾𝚃𝙴𝚂
+  │ 𝚃𝙷𝙴 𝙲𝙾𝙽𝚃𝙴𝙽𝚃 𝙸𝙽𝚂𝙸𝙳𝙴 <XXXXX> 𝙲𝙰𝙽 𝙱𝙴 𝙲𝙷𝙰𝙽𝙶𝙴𝙳
+  │ 𝚃𝙷𝙴 𝙲𝙾𝙽𝚃𝙴𝙽𝚃 𝙸𝙽𝚂𝙸𝙳𝙴 [𝙰|𝙱|𝙲] 𝙸𝚂 𝙰./.𝙱/.𝙲
   ╰━━━━━━━❖`;
 
         await message.reply(response);
